@@ -1,0 +1,77 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@jenofdoom's sekrit treehouse</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+          <a class="navbar-brand" href="#">@jenofdoom's sekrit treehouse</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Create an account</a>
+              </li>
+            </ul>
+            <span>
+              <a class="login-link" href="#">Login</a>
+            </span>
+          </div>
+        </nav>
+
+        <main role="main" class="container">
+
+          <div class="content">
+            <h1 class ="sr-only">@jenofdoom's sekrit treehouse</h1>
+            <h2>Create an account</h2>
+            <p class="lead">Pick a username and create your account password.</p>
+          </div>
+
+          <form>
+            <div>
+              <label for="username">Username</label>
+              <input id="username" autocomplete="off" type="text" required>
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input id="email" autocomplete="off" type="email" required>
+            </div>
+
+            <div>
+              <label for="password">Password</label>
+              <div class="password-strength">
+                <input id="password" type="password" required>
+                <div class="bar">
+                  <div class="segment strength-1"></div>
+                  <div class="segment strength-2"></div>
+                  <div class="segment strength-3"></div>
+                  <div class="segment strength-4"></div>
+                </div>
+              </div>
+              <span class="form-text"></span>
+            </div>
+
+            <div>
+              <button type="submit" disabled="">Create account</button>
+            </div>
+
+          </form>
+
+        </main>
+
+        <script src="js/bundle.js"></script>
+    </body>
+</html>

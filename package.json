@@ -1,0 +1,32 @@
+{
+  "name": "zxcvbn-presentation-frontend-build",
+  "version": "1.0.0",
+  "description": "Frontend build process created by catalyst-frontend",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/gulp build",
+    "start": "./node_modules/.bin/gulp",
+    "deps:check": "./node_modules/.bin/npm-check-updates && ./node_modules/.bin/retire",
+    "deps:update": "./node_modules/.bin/npm-check-updates -u && ./node_modules/.bin/npm-check-updates -a && npm install && ./node_modules/.bin/retire"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "autoprefixer": "~7.1.6",
+    "bootstrap": "~4.0.0-beta",
+    "cssnano": "~3.10.0",
+    "gulp": "~3.9.1",
+    "gulp-concat": "~2.6.1",
+    "gulp-postcss": "~7.0.0",
+    "gulp-sass": "~3.1.0",
+    "gulp-sourcemaps": "~2.6.1",
+    "gulp-uglify": "~3.0.0",
+    "jquery": "~3.2.1",
+    "npm-check-updates": "~2.13.0",
+    "popper.js": "~1.12.9",
+    "postcss-flexbugs-fixes": "~3.2.0",
+    "retire": "~1.4.0",
+    "zxcvbn": "~4.4.2"
+  }
+}

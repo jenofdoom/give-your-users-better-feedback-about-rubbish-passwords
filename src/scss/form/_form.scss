@@ -1,0 +1,40 @@
+// to get rid of lastpass styling for demo
+#__lpform_username,
+#__lpform_email,
+#__lpform_password {
+  display: none;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  background-image: none !important; // get rid of lastpass styling for demo
+  background: #ffffff;
+  width: 100%;
+  max-width: $field-max-width;
+  margin-bottom: 1rem;
+  padding: 5px 10px;
+  border: 1px solid #aaaaaa;
+  border-radius: 2px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+}
+
+button {
+  margin-top: 1rem;
+
+  &:hover {
+    cursor: pointer;
+
+    &:disabled {
+      cursor: auto;
+    }
+  }
+}
+
+.form-text {
+  margin-bottom: 1rem;
+}

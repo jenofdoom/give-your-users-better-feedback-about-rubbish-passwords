@@ -1,0 +1,17 @@
+body {
+  padding-top: 5rem;
+}
+
+.content {
+  padding: 0.5rem 0;
+  text-align: left;
+}
+
+.login-link {
+  color: #ffffff;
+
+  &:hover {
+    color: #cccccc;
+    text-decoration: none;
+  }
+}

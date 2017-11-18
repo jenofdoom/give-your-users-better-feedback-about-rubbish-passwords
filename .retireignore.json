@@ -1,0 +1,12 @@
+[
+  {
+    "component": "brace-expansion",
+    "version" : "1.1.6",
+    "justification" : "brace-expansion is only ever used locally by gulp and ncu."
+  },
+  {
+		"component": "bootstrap",
+		"identifiers" : { "issue": "20184" },
+		"justification" : "User data should never be used in a data- attribute."
+	}
+]
