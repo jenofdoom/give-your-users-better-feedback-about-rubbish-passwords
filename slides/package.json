@@ -1,0 +1,22 @@
+{
+  "name": "zxcvbn-presentation-frontend-build-slides",
+  "version": "1.0.0",
+  "description": "2017 intro slides",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/gulp build",
+    "watch": "./node_modules/.bin/gulp",
+    "start":  "node server.js"
+  },
+  "author": "Jen Zajac",
+  "license": "UNLICENCED",
+  "devDependencies": {
+    "gulp": "~3.9.1",
+    "gulp-autoprefixer": "~3.1.1",
+    "gulp-clean-css": "~2.0.13",
+    "gulp-sass": "~2.3.2",
+    "reveal.js": "~3.4.1",
+    "express": "~4.14.0"
+  }
+}

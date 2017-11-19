@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Give your users better feedback about rubbish passwords with zxcvbn</title>
+
+		<link rel="stylesheet" href="/css/reveal.css">
+		<link rel="stylesheet" href="/css/theme/zxcvbn.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '/css/print/pdf.css' : '/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+        <section>
+          <h1>Give your users better feedback about rubbish passwords with zxcvbn</h1>
+          <h4>Jen Zajac // @jenofdoom</h4>
+          <h5>Catalyst</h5>
+        </section>
+
+        <section>
+          <h2>Passwords are <em>fundamentally broken</em></h2>
+        </section>
+
+        <section>
+          <h2>Most common passwords</h2>
+          <ol>
+            <li>123456</li>
+            <li>password</li>
+            <li>12345</li>
+            <li>12345678</li>
+            <li>football</li>
+          </ol>
+          <small>Source: SplashData, 2016</small>
+        </section>
+
+        <section>
+          <h2>As devs or infosec folks, <em>we know better</em></h2>
+        </section>
+
+        <section>
+          <h3>we use password managers, so we <em>don’t reuse the same passwords</em></h3>
+        </section>
+
+        <section>
+          <h3>we follow xkcd’s advice about <em>correct horse battery staplers</em></h3>
+        </section>
+
+        <section>
+          <h3>we always enable 2FA, maybe even <em>using a physical 2FA token</em></h3>
+        </section>
+
+        <section>
+          <h2>Our nontechnical users&hellip; <em>often don’t know this stuff yet</em></h2>
+        </section>
+
+        <section>
+          <h2>In the absence of external guidance, we <em>can’t blame</em> our users for this</h2>
+        </section>
+
+        <section>
+          <h3>(nor would blame <em>help fix</em> anything)</h3>
+          <aside class="notes">
+            The list of most common passwords hasn't changed very much over the years - just telling people that they're messing this up isn't helping. If we want things to be more secure we need to enforce standards ourselves.
+          </aside>
+        </section>
+
+        <section>
+          <h2>In fact, as an industry, we’ve <em>systematically created a set of perverse incentives</em> that make it more likely that users will create bad passwords</h2>
+        </section>
+
+        <section>
+          <h3>username + password is an <em>overused hammer</em> in a sparse toolbox</h3>
+          <aside class="notes">
+            Without the crutch of a password manager, is it any wonder that in the modern world we live in, users reuse passwords?
+          </aside>
+        </section>
+
+        <section>
+          <h3>we provide <em>bad advice</em> about what will make a password more secure</h3>
+          <aside class="notes">
+            Using a capital letter and a number in your dictionary word no longer cuts the mustard. Most password strength validation relies on counts of lower and uppercase letters, digits and symbols.
+          </aside>
+        </section>
+
+        <section>
+          <h3>we forbid <em>arbitrary characters</em></h3>
+          <aside class="notes">
+            Many sites even prevent the use of symbols at all.
+          </aside>
+        </section>
+
+        <section>
+          <h3>our <em>minimum length</em> requirements are often outdated</h3>
+          <aside class="notes">
+            With modern password cracking hardware, 6 character or less passwords are very insecure.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Overall, we <em>fail to provide good advice</em></h2>
+        </section>
+
+        <section>
+          <h2>Fortunately, <em>we can do better</em></h2>
+        </section>
+
+        <section>
+          <h2><em>zxcvbn</em></h2>
+          <aside class="notes">
+            zxcvbn has been around since 2012, created by an engineer at DropBox
+            | open source library, written in JavaScript (well, actually CoffeeScript)
+            | there are many ports to various other languages, and it can also be used as b/e JS
+          </aside>
+        </section>
+
+        <section>
+          <h2><em>Demo</em></h2>
+          <aside class="notes">
+            Today we'll be focusing on how to integrate it with your frontend. In practice you'd definitely want it on both your frontend and backend so you don't have rules mismatches.
+          </aside>
+        </section>
+
+        <section>
+          <h3><em>https://github.com/dropbox/zxcvbn</em></h3>
+        </section>
+
+			</div>
+		</div>
+
+		<script src="/lib/js/head.min.js"></script>
+		<script src="/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+        width: 1280,
+        height: 720,
+
+        controls: false,
+        progress: false,
+
+        autoSlide: 0,  // disabled when 0
+
+        transition: 'none',
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '/plugin/markdown/marked.js' },
+					{ src: '/plugin/markdown/markdown.js' },
+					{ src: '/plugin/notes/notes.js', async: true },
+					{ src: '/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

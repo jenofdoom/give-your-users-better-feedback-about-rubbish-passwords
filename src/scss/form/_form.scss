@@ -1,14 +1,6 @@
-// to get rid of lastpass styling for demo
-#__lpform_username,
-#__lpform_email,
-#__lpform_password {
-  display: none;
-}
-
 input[type=text],
 input[type=email],
 input[type=password] {
-  background-image: none !important; // get rid of lastpass styling for demo
   background: #ffffff;
   width: 100%;
   max-width: $field-max-width;
@@ -37,4 +29,18 @@ button {
 
 .form-text {
   margin-bottom: 1rem;
+}
+
+// to get rid of lastpass styling for demo
+// THIS IS AN ANTIPATTERN, DON'T DO THIS
+#__lpform_username,
+#__lpform_email,
+#__lpform_password {
+  display: none;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  background-image: none !important;
 }
