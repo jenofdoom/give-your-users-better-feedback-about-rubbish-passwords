@@ -39,6 +39,12 @@ button {
   display: none;
 }
 
+#__lpform_username_numspan,
+#__lpform_email_numspan,
+#__lpform_password_numspan {
+  margin-left: -100vw;
+}
+
 input[type=text],
 input[type=email],
 input[type=password] {

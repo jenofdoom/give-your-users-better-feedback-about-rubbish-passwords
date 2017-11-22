@@ -17,10 +17,10 @@ $(document).ready(function() {
   passwordField.keyup(function(event) {
     var password = passwordField.val();
     var strengthBar = passwordField.parent();
-    var helptext = strengthBar.next();
 
     if (password.length) {
-      var feedback = '';
+      var suggestions = '';
+      var warnings = '';
 
       // evaluate the password, penalising against reuse of user data
       // and words associated with the site
@@ -33,26 +33,33 @@ $(document).ready(function() {
 
       // THESE ARE FOR DEMO PURPOSES ONLY!
       console.log(password);
-      console.log(validation);
+      // console.log(validation);
       // THESE ARE FOR DEMO PURPOSES ONLY!
 
-      // create help text from suggestions and warnings
+      // create help text from suggestions
       if (validation.feedback.suggestions) {
         validation.feedback.suggestions.forEach(function(text, index) {
           if (text.slice(-1) !== '.') {
             validation.feedback.suggestions[index] = text + '.';
           }
         });
-        feedback = validation.feedback.suggestions.join(' ');
+        suggestions = validation.feedback.suggestions.join(' ');
+        $('.password-field .alert-info').text(suggestions);
+        $('.password-field .alert-info').removeClass('hidden');
+      } else {
+        $('.password-field .alert-info').addClass('hidden');
       }
+
+      // create help text from warning
       if (validation.feedback.warning) {
-        if (validation.feedback.suggestions) {
-          feedback = feedback + ' '; // add spacing
-        }
-        feedback = feedback + validation.feedback.warning;
+        warnings = validation.feedback.warning;
         if (validation.feedback.warning.slice(-1) !== '.') {
-          feedback = feedback + '.'
+          warnings = warnings + '.'
         }
+        $('.password-field .alert-warning').text(warnings);
+        $('.password-field .alert-warning').removeClass('hidden');
+      } else {
+        $('.password-field .alert-warning').addClass('hidden');
       }
 
       // adjust the password strength score bar
@@ -60,10 +67,9 @@ $(document).ready(function() {
 
       // make strength available for submit button enable/disable logic
       passwordField.data('strength', validation.score);
-
-      helptext.text(feedback);
     } else {
-      helptext.text('');
+      // no text, make sure feedback is hidden
+      $('.password-field .alert').addClass('hidden');
     }
   });
 });
