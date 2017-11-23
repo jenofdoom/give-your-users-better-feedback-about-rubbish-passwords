@@ -32,7 +32,8 @@ gulp.task('scss', () => {
   return gulp.src(PATHS.src.scss)
     .pipe(sass({
         includePaths: [
-          './node_modules/bootstrap/scss/'
+          './node_modules/bootstrap/scss/',
+          './node_modules/ionicons/dist/scss'
           ]
       })
       .on('error', sass.logError)
@@ -61,15 +62,30 @@ gulp.task('js', function() {
     ])
     .pipe(sourcemaps.init())
     .pipe(concatjs('bundle.js'))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(PATHS.dist.js));
+});
+
+gulp.task('js-with-minify', function() {
+  return gulp.src([
+      './node_modules/jquery/dist/jquery.js',
+      './node_modules/popper.js/dist/umd/popper.js',
+      './node_modules/bootstrap/dist/js/bootstrap.js',
+      './node_modules/zxcvbn/dist/zxcvbn.js',
+      PATHS.src.js
+    ])
+    .pipe(sourcemaps.init())
+    .pipe(concatjs('bundle.js'))
     .pipe(uglifyjs({ mangle: false }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(PATHS.dist.js));
 });
 
-gulp.task('build', ['copy-files', 'scss', 'js']);
+gulp.task('build', ['copy-files', 'scss', 'js-with-minify']);
+gulp.task('build-no-minify', ['copy-files', 'scss', 'js']);
 
 gulp.task('watch', () => {
-  gulp.watch(PATHS.src.root, ['build']);
+  gulp.watch(PATHS.src.root, ['build-no-minify']);
 });
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['build-no-minify', 'watch']);

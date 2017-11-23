@@ -37,14 +37,14 @@ $(document).ready(function() {
       // THESE ARE FOR DEMO PURPOSES ONLY!
 
       // create help text from suggestions
-      if (validation.feedback.suggestions) {
+      if (validation.feedback.suggestions.length) {
         validation.feedback.suggestions.forEach(function(text, index) {
           if (text.slice(-1) !== '.') {
             validation.feedback.suggestions[index] = text + '.';
           }
         });
         suggestions = validation.feedback.suggestions.join(' ');
-        $('.password-field .alert-info').text(suggestions);
+        $('.password-field .alert-info .text').text(suggestions);
         $('.password-field .alert-info').removeClass('hidden');
       } else {
         $('.password-field .alert-info').addClass('hidden');
@@ -56,7 +56,7 @@ $(document).ready(function() {
         if (validation.feedback.warning.slice(-1) !== '.') {
           warnings = warnings + '.'
         }
-        $('.password-field .alert-warning').text(warnings);
+        $('.password-field .alert-warning .text').text(warnings);
         $('.password-field .alert-warning').removeClass('hidden');
       } else {
         $('.password-field .alert-warning').addClass('hidden');

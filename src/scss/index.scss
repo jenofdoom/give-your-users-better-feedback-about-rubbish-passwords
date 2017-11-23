@@ -4,6 +4,7 @@
 @import 'variables-project'; // for any custom project variables
 @import 'variables-bootstrap'; // override bootstrap variables - import prior to bootstrap
 @import 'bootstrap';  // from node_modules/bootstrap/scss via gulpfile include path
+@import 'ionicons'; // from node_modules/ionicons/dist/scss via gulpfile
 
 // Base styling and module styling imports
 @import 'base/base';
