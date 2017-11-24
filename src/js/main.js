@@ -4,8 +4,8 @@ $(document).ready(function() {
   // enable create account button when form valid
   $('input').keyup(function() {
     var isFormValid = $('form')[0].checkValidity() === true;
-    var passwordStrength = $('#password').data('strength');
-    if (isFormValid && passwordStrength && parseInt(passwordStrength, 10) > 2) {
+    var passwordStrength = parseInt($('#password').data('strength'), 10);
+    if (isFormValid && passwordStrength && passwordStrength > 2) {
       $('button[type=submit]').prop('disabled', false);
     } else {
       $('button[type=submit]').prop('disabled', true);
@@ -14,6 +14,7 @@ $(document).ready(function() {
 
   // password strength checking
   var passwordField = $('#password');
+
   passwordField.keyup(function(event) {
     var password = passwordField.val();
     var strengthBar = passwordField.parent();
